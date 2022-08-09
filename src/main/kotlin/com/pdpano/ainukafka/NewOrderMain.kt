@@ -1,42 +1,35 @@
 package com.pdpano.ainukafka
 
-import org.apache.kafka.clients.producer.KafkaProducer
-import org.apache.kafka.clients.producer.ProducerConfig
+import com.pdpano.ainukafka.config.KafkaConfiguration
 import org.apache.kafka.clients.producer.ProducerRecord
-import org.apache.kafka.common.serialization.StringSerializer
-import java.util.*
 
-class NewOrderMain {
-    companion object {
-        fun initProperties(): Properties {
-            val properties = Properties()
-
-            properties.setProperty(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "127.0.0.1:9092")
-            properties.setProperty(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer::class.java.name)
-            properties.setProperty(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, StringSerializer::class.java.name)
-
-            return properties
-        }
-    }
-}
+@Suppress("unused")
+class NewOrderMain { }
 
 fun main() {
-    val properties = NewOrderMain.initProperties()
-    val producer = KafkaProducer<String, String>(properties)
-    val title = "1"
-    val value = "BOM DIA"
+    val producer = KafkaConfiguration.initProducer<String, String>()
+
+    var title = "1"
+    var value = "Thank you for your order! We are processing your order."
     val record = ProducerRecord("AINU_NEW_TATTO_ORDER", title, value)
 
-    producer.send(record) { data, ex ->
+    producer.send(record) { _, ex ->
         if (ex != null) {
             ex.printStackTrace()
         } else {
-            println("""
-                Notificação enviada com sucesso! 
-                ::particao -> ${data.partition()}
-                ::offset -> ${data.offset()}
-                ::timestamp -> ${data.timestamp()}
-            """.trimIndent())
+            println("Notificação enviada com sucesso!")
+        }
+    }.get()
+
+    title = "2"
+    value = "Sending email for confirmation"
+    val record2 = ProducerRecord("AINU_SEND_EMAIL", title, value)
+
+    producer.send(record2) { _, ex ->
+        if (ex != null) {
+            ex.printStackTrace()
+        } else {
+            println("Email enviado com sucesso!")
         }
     }.get()
 }

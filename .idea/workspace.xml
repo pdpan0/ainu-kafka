@@ -5,11 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ac1475c7-529f-4f28-ae9b-d50eb1772cc0" name="Changes" comment="initial configuration">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/pdpano/ainukafka/NewOrderMain.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/pdpano/ainukafka/EmailService.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/pdpano/ainukafka/FraudDetectorService.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/pdpano/ainukafka/LogService.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/pdpano/ainukafka/config/KafkaConfiguration.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Main.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/pdpano/ainukafka/NewOrderMain.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/pdpano/ainukafka/NewOrderMain.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,15 +62,41 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "/home/pdpano/workspace/ainu-kafka/src/main/kotlin/com/pdpano/ainukafka",
     "settings.editor.selected.configurable": "copyright"
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/kotlin/com/pdpano/ainukafka" />
+    </key>
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="com.pdpano.ainukafka.config" />
       <recent name="com.pdpano.ainukafka" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Kotlin.NewOrderMainKt">
+    <configuration name="EmailServiceKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.pdpano.ainukafka.EmailServiceKt" />
+      <module name="ainu-kafka.main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FraudDetectorServiceKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.pdpano.ainukafka.FraudDetectorServiceKt" />
+      <module name="ainu-kafka.main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LogServiceKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.pdpano.ainukafka.LogServiceKt" />
+      <module name="ainu-kafka.main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="NewOrderMainKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.pdpano.ainukafka.NewOrderMainKt" />
       <module name="ainu-kafka.main" />
@@ -80,6 +107,9 @@
     <recent_temporary>
       <list>
         <item itemvalue="Kotlin.NewOrderMainKt" />
+        <item itemvalue="Kotlin.LogServiceKt" />
+        <item itemvalue="Kotlin.FraudDetectorServiceKt" />
+        <item itemvalue="Kotlin.EmailServiceKt" />
       </list>
     </recent_temporary>
   </component>
