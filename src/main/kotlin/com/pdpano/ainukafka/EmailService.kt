@@ -19,6 +19,7 @@ fun main() {
                     Email resgatado! 
                     ${it.key()}
                     ${it.value()}
+                    ${it.partition()}
                 """.trimIndent())
 
                 delay(5000)

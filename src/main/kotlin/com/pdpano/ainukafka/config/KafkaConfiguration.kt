@@ -17,6 +17,8 @@ class KafkaConfiguration {
             properties.setProperty(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer::class.java.name)
             properties.setProperty(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, StringDeserializer::class.java.name)
             properties.setProperty(ConsumerConfig.GROUP_ID_CONFIG, groupName)
+            properties.setProperty(ConsumerConfig.CLIENT_ID_CONFIG, "$groupName - ${UUID.randomUUID()}")
+            properties.setProperty(ConsumerConfig.MAX_POLL_RECORDS_CONFIG, "1")
 
             return KafkaConsumer<K, V>(properties)
         }

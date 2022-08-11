@@ -15,7 +15,7 @@ fun main() {
 
         if (!records.isEmpty) {
             records.forEach {
-                println("Log ${it.topic()}")
+                println("${it.topic()} :: ${it.key()}")
             }
         }
     }
