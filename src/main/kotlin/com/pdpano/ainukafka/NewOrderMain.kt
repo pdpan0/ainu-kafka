@@ -1,21 +1,31 @@
 package com.pdpano.ainukafka
 
 import com.pdpano.ainukafka.config.KafkaConfiguration
+import com.pdpano.ainukafka.domain.Email
+import com.pdpano.ainukafka.domain.Order
 import org.apache.kafka.clients.producer.ProducerRecord
+import java.math.BigDecimal
+import java.math.RoundingMode
 import java.util.UUID
 
 @Suppress("unused")
 class NewOrderMain {}
 
 fun main() {
-    val producer = KafkaConfiguration.initProducer<String, String>()
+    val orderProducer = KafkaConfiguration.initProducer<String, Order>()
+    val emailProducer = KafkaConfiguration.initProducer<String, Email>()
 
     for (i in 0..20) {
-        val key = UUID.randomUUID().toString()
-        var value = "Thank you for your order! We are processing your order."
-        val record = ProducerRecord("AINU_NEW_TATTO_ORDER", key, value)
+        val userUuid = UUID.randomUUID().toString()
+        val email = UUID.randomUUID().toString() + "@mail.com"
 
-        producer.send(record) { _, ex ->
+        val record = ProducerRecord("AINU_NEW_TATTO_ORDER", userUuid, Order(
+            orderUuid = UUID.randomUUID().toString(),
+            userUuid = userUuid,
+            price = BigDecimal(Math.random() * 5000 + 1).setScale(2, RoundingMode.DOWN)
+        ))
+
+        orderProducer.send(record) { _, ex ->
             if (ex != null) {
                 ex.printStackTrace()
             } else {
@@ -23,10 +33,12 @@ fun main() {
             }
         }.get()
 
-        value = "Sending email for confirmation"
-        val record2 = ProducerRecord("AINU_SEND_EMAIL", key, value)
+        val record2 = ProducerRecord("AINU_SEND_EMAIL", userUuid, Email(
+            userUuid = userUuid,
+            email = email
+        ))
 
-        producer.send(record2) { _, ex ->
+        emailProducer.send(record2) { _, ex ->
             if (ex != null) {
                 ex.printStackTrace()
             } else {
