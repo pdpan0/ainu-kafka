@@ -1,13 +1,14 @@
 package com.pdpano.ainukafka
 
 import com.pdpano.ainukafka.config.KafkaConfiguration
+import com.pdpano.ainukafka.domain.Order
 import java.time.Duration
 import java.util.*
 
 class FraudDetectorService { }
 
 fun main() {
-    val consumer = KafkaConfiguration.initConsumer<String, String>(FraudDetectorService::class.simpleName!!)
+    val consumer = KafkaConfiguration.initConsumer<String, Order>(FraudDetectorService::class.simpleName!!)
     consumer.subscribe(Collections.singletonList("AINU_NEW_TATTO_ORDER"))
 
     while (true) {
@@ -18,7 +19,8 @@ fun main() {
                 println("""
                     Notificação resgatada! 
                     ${it.key()}
-                    ${it.value()}
+                    ${it.value().orderUuid}
+                    ${it.value().price}
                 """.trimIndent())
 
                 delay(5000)

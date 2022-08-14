@@ -1,13 +1,14 @@
 package com.pdpano.ainukafka
 
 import com.pdpano.ainukafka.config.KafkaConfiguration
+import com.pdpano.ainukafka.domain.Email
 import java.time.Duration
 import java.util.*
 
 class EmailService { }
 
 fun main() {
-    val consumer = KafkaConfiguration.initConsumer<String, String>(EmailService::class.simpleName!!)
+    val consumer = KafkaConfiguration.initConsumer<String, Email>(EmailService::class.simpleName!!)
     consumer.subscribe(Collections.singletonList("AINU_SEND_EMAIL"))
 
     while (true) {
