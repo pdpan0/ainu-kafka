@@ -19,6 +19,9 @@ dependencies {
     implementation("org.apache.kafka:kafka-clients:3.2.1")
     // https://mvnrepository.com/artifact/org.slf4j/slf4j-simple
     testImplementation("org.slf4j:slf4j-simple:1.7.36")
+    // https://mvnrepository.com/artifact/com.google.code.gson/gson
+    implementation("com.google.code.gson:gson:2.9.1")
+
 }
 
 tasks.test {
