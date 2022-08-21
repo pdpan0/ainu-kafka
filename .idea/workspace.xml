@@ -5,12 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ac1475c7-529f-4f28-ae9b-d50eb1772cc0" name="Changes" comment="initial configuration">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/pdpano/ainukafka/EmailService.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/pdpano/ainukafka/FraudDetectorService.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/pdpano/ainukafka/LogService.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/pdpano/ainukafka/config/KafkaConfiguration.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/kotlinc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common-kafka/src/main/kotlin/com/pdpano/ainukafka/config/GsonDeserializer.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common-kafka/src/main/kotlin/com/pdpano/ainukafka/config/GsonSerializer.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common-kafka/src/main/kotlin/com/pdpano/ainukafka/config/KafkaConfiguration.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-email/src/main/kotlin/com/pdpano/ainukafka/domain/Email.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/pdpano/ainukafka/NewOrderMain.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/pdpano/ainukafka/NewOrderMain.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/pdpano/ainukafka/EmailService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/service-email/src/main/kotlin/com/pdpano/ainukafka/EmailService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/pdpano/ainukafka/FraudDetectorService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/service-fraud-detector/src/main/kotlin/com/pdpano/ainukafka/FraudDetectorService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/pdpano/ainukafka/LogService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/service-log/src/main/kotlin/com/pdpano/ainukafka/LogService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/pdpano/ainukafka/NewOrderMain.kt" beforeDir="false" afterPath="$PROJECT_DIR$/service-send-order/src/main/kotlin/com/pdpano/ainukafka/NewOrderMain.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/pdpano/ainukafka/config/GsonDeserializer.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/pdpano/ainukafka/config/GsonSerializer.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/pdpano/ainukafka/config/KafkaConfiguration.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/pdpano/ainukafka/domain/Email.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/pdpano/ainukafka/domain/Order.kt" beforeDir="false" afterPath="$PROJECT_DIR$/service-send-order/src/main/kotlin/com/pdpano/ainukafka/domain/Order.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,16 +33,33 @@
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
+    <projectState path="$PROJECT_DIR$/service-log">
+      <ProjectState />
+    </projectState>
   </component>
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
         <projects_view>
           <tree_state>
             <expand>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="ainu-kafka" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="ainu-kafka" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="ainu-kafka" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="other" type="c8890929:TasksNode$1" />
               </path>
             </expand>
             <select />
@@ -58,58 +87,131 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "/home/pdpano/workspace/ainu-kafka/src/main/kotlin/com/pdpano/ainukafka",
-    "settings.editor.selected.configurable": "copyright"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;11&quot;,
+    &quot;last_directory_selection&quot;: &quot;/home/pdpano/workspace/ainu-kafka/service-send-order/src/main/kotlin/com/pdpano/ainukafka&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/pdpano/workspace/ainu-kafka/service-email/src/main&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;copyright&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/service-email/src/main" />
       <recent name="$PROJECT_DIR$/src/main/kotlin/com/pdpano/ainukafka" />
     </key>
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="com.pdpano.ainukafka.domain" />
       <recent name="com.pdpano.ainukafka.config" />
       <recent name="com.pdpano.ainukafka" />
     </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.pdpano.ainukafka" />
+    </key>
   </component>
-  <component name="RunManager" selected="Kotlin.NewOrderMainKt">
-    <configuration name="EmailServiceKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.pdpano.ainukafka.EmailServiceKt" />
-      <module name="ainu-kafka.main" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
+  <component name="RunManager" selected="Gradle.ainu-kafka [dependencies]">
+    <configuration name="ainu-kafka [dependencies]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="dependencies" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
     </configuration>
-    <configuration name="FraudDetectorServiceKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.pdpano.ainukafka.FraudDetectorServiceKt" />
-      <module name="ainu-kafka.main" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
+    <configuration name="ainu-kafka [hello]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="hello" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
     </configuration>
-    <configuration name="LogServiceKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.pdpano.ainukafka.LogServiceKt" />
-      <module name="ainu-kafka.main" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
+    <configuration name="ainu-kafka [wrapper]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="wrapper" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
     </configuration>
-    <configuration name="NewOrderMainKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.pdpano.ainukafka.NewOrderMainKt" />
-      <module name="ainu-kafka.main" />
+    <configuration name="ainu-kafka" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list />
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="build.gradle.kts" type="KotlinStandaloneScriptRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <module name="ainu-kafka" />
+      <option name="filePath" value="$PROJECT_DIR$/build.gradle.kts" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Kotlin.NewOrderMainKt" />
-        <item itemvalue="Kotlin.LogServiceKt" />
-        <item itemvalue="Kotlin.FraudDetectorServiceKt" />
-        <item itemvalue="Kotlin.EmailServiceKt" />
+        <item itemvalue="Gradle.ainu-kafka [dependencies]" />
+        <item itemvalue="Gradle.ainu-kafka [hello]" />
+        <item itemvalue="Gradle.ainu-kafka [wrapper]" />
+        <item itemvalue="Gradle.ainu-kafka" />
+        <item itemvalue="Kotlin script (Beta).build.gradle.kts" />
       </list>
     </recent_temporary>
   </component>
