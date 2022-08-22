@@ -36,7 +36,8 @@ fun main() {
         val record2 = ProducerRecord("AINU_SEND_EMAIL", userUuid, Email(
             userUuid = userUuid,
             email = email
-        ))
+        )
+        )
 
         emailProducer.send(record2) { _, ex ->
             if (ex != null) {
